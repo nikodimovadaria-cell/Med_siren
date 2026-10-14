@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7effb">
+<title>Med Siren — студия физиотерапии в Сукко</title>
+<meta name="description" content="Med Siren — студия физиотерапии и ухода за собой в Сукко. Услуги, цены и запись на процедуры.">
+
+<style>
+:root {
+  --purple: #70419a;
+  --deep: #543078;
+  --lavender: #c8a7df;
+  --pale: #f7effb;
+  --cream: #fffafd;
+  --ink: #30263a;
+  --muted: #756a7d;
+  --line: #e7d7ef;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; }
+.wrap { width: min(1100px, 92%); margin: auto; }
+header {
+  padding: 18px 0;
+  background: rgba(255,250,253,.96);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.brand {
+  color: var(--purple);
+  font: 42px Georgia, serif;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+.brand small {
+  display: block;
+  margin-top: 7px;
+  color: var(--ink);
+  font: 10px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.flower { color: #a87bc8; }
+nav { display: flex; gap: 20px; flex-wrap: wrap; }
+nav a { font-size: 14px; text-decoration: none; }
+nav a:hover { color: var(--purple); }
+.btn {
+  display: inline-block;
+  padding: 13px 23px;
+  border: 1px solid var(--purple);
+  border-radius: 30px;
+  background: var(--purple);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: .2s;
+}
+.btn:hover { background: var(--deep); }
+.btn-outline { background: transparent; color: var(--purple); }
+.hero {
+  padding: 65px 0 55px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 90% 10%, #e8d5f5 0, transparent 38%),
+    linear-gradient(135deg, #fffafd, #f4eafa);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 35px;
+}
+.eyebrow {
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+h1,h2,h3 { line-height: 1.2; }
+h1 {
+  margin: 17px 0;
+  color: var(--deep);
+  font: clamp(40px, 6vw, 67px) Georgia, serif;
+}
+.hero p { max-width: 490px; color: var(--muted); font-size: 18px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.hero-art {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e3d0ef;
+  border-radius: 48% 48% 42% 42%;
+  background: linear-gradient(145deg, #fff, #ebdcf6);
+  box-shadow: 0 20px 55px #70419a18;
+  text-align: center;
+}
+.cat { font-size: 110px; line-height: 1.2; }
+.hero-art strong { color: var(--purple); font: 28px Georgia, serif; }
+.hero-art span { color: var(--muted); font-size: 13px; }
+section { padding: 65px 0; }
+.section-head { max-width: 650px; margin: 0 auto 32px; text-align: center; }
+.section-head h2 { margin: 10px 0; color: var(--deep); font: 38px Georgia, serif; }
+.section-head p { color: var(--muted); }
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.feature {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+}
+.feature .symbol { font-size: 31px; }
+.feature h3 { color: var(--purple); font-size: 18px; }
+.feature p { color: var(--muted); font-size: 14px; }
+.services { background: #f9f3fc; }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+.service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 19px 21px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: white;
+}
+.service h3 { margin: 0 0 4px; font-size: 16px; }
+.service p { margin: 0; color: var(--muted); font-size: 12px; }
+.price { color: var(--purple); font-weight: bold; white-space: nowrap; }
+.promo {
+  padding: 35px;
+  border-radius: 25px;
+  background: linear-gradient(120deg, #70419a, #b58bd0);
+  color: white;
+  text-align: center;
+}
+.promo h2 { margin: 0 0 10px; font: 34px Georgia, serif; }
+.promo p { margin: 0 0 20px; }
+.promo .btn { background: white; color: var(--deep); border-color: white; }
+.note { margin-top: 20px; color: var(--muted); font-size: 12px; }
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.contact-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+}
+.contact-card h3 { color: var(--purple); }
+.contact-line { margin: 15px 0; }
+.contact-line span { color: var(--muted); display: block; font-size: 12px; }
+.contact-line a { color: var(--purple); font-weight: bold; text-decoration: none; }
+footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  background: var(--pale);
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+footer .brand { font-size: 29px; margin-bottom: 10px; }
+@media (max-width: 700px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .brand { font-size: 36px; }
+  nav { gap: 14px; }
+  .hero { padding: 43px 0; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-art { min-height: 260px; }
+  .cat { font-size: 85px; }
+  section { padding: 46px 0; }
+  .section-head h2 { font-size: 31px; }
+  .features, .service-grid, .contacts-grid { grid-template-columns: 1fr; }
+  .promo { padding: 28px 18px; }
+  .promo h2 { font-size: 28px; }
+  .service { padding: 16px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#" style="text-decoration:none">
+      <div class="brand">Med<span class="flower">✿</span>siren</div>
+      <div style="font-size:10px;letter-spacing:2px;text-align:center">
+        СТУДИЯ ФИЗИОТЕРАПИИ
+      </div>
+    </a>
+    <nav>
+      <a href="#about">О студии</a>
+      <a href="#services">Услуги и цены</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn" href="#contacts">Записаться</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Красота и здоровье в гармонии</div>
+      <h1>Время<br>позаботиться<br>о себе</h1>
+      <p>
+        Med Siren — пространство заботы о вашем самочувствии,
+        красоте и естественной гармонии. Подберём процедуру
+        с учётом ваших пожеланий.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#services">Наши услуги</a>
+        <a class="btn btn-outline" href="#contacts">Связаться с нами</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="cat">🐈</div>
+      <strong>Ваша Siren</strong>
+      <span>Нежность в каждой детали ♡</span>
+      <div style="margin-top:16px;color:#8c61ad">✿　✿　✿</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Добро пожаловать в Med Siren</div>
+      <h2>Забота, которую вы чувствуете</h2>
+      <p>
+        Мы стремимся создать уютную атмосферу, в которой
+        можно уделить время себе и выбрать подходящие процедуры.
+      </p>
+    </div>
+    <div class="features">
+      <article class="feature">
+        <div class="symbol">✿</div>
+        <h3>Индивидуальный подход</h3>
+        <p>Обсуждаем ваши пожелания и особенности перед процедурой.</p>
+      </article>
+      <article class="feature">
+        <div class="symbol">♡</div>
+        <h3>Комфорт и забота</h3>
+        <p>Внимание к деталям и спокойная атмосфера во время визита.</p>
+      </article>
+      <article class="feature">
+        <div class="symbol">❋</div>
+        <h3>Разные процедуры</h3>
+        <p>Выберите услугу из каталога и уточните детали у специалиста.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Каталог процедур</div>
+      <h2>Услуги и цены</h2>
+      <p>Актуальность стоимости и возможность записи уточняйте у студии.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service">
+        <div><h3>Прессотерапия</h3><p>Мягкая аппаратная процедура</p></div>
+        <div class="price">500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Дарсонваль</h3><p>Аппаратная процедура</p></div>
+        <div class="price">500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Электрофорез</h3><p>По назначению специалиста</p></div>
+        <div class="price">500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Магнитотерапия</h3><p>С учётом показаний и противопоказаний</p></div>
+        <div class="price">500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Лазеротерапия</h3><p>По согласованию со специалистом</p></div>
+        <div class="price">500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Массажная кровать</h3><p>Уточните доступный формат процедуры</p></div>
+        <div class="price">500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Ударно-волновая терапия</h3><p>Одна зона — 1 500 ₽; две зоны — 2 000 ₽</p></div>
+        <div class="price">от 1 500 ₽</div>
+      </article>
+      <article class="service">
+        <div><h3>Гидропилинг</h3><p>Уходовая процедура</p></div>
+        <div class="price">1 500 ₽*</div>
+      </article>
+    </div>
+    <p class="note">
+      *Стоимость гидропилинга указана по ранее объявленной акции.
+      Перед записью уточните, действует ли предложение.
+      Процедуры проводятся с учётом показаний и противопоказаний.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="promo">
+      <div style="font-size:35px">✿ ♡ ✿</div>
+      <h2>Время для себя</h2>
+      <p>Узнайте о текущих акциях и свободном времени для записи в Med Siren.</p>
+      <a class="btn" href="https://vk.ru/medsiren" target="_blank" rel="noopener">
+        Узнать об акциях
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Будем рады вас видеть</div>
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нами, чтобы уточнить детали и записаться.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card">
+        <h3>Med Siren</h3>
+        <div class="contact-line">
+          <span>Адрес</span>
+          Сукко, остановка «Амбулатория»
+        </div>
+        <div class="contact-line">
+          <span>Телефон</span>
+          <a href="tel:+79213939696">+7 921 393-96-96</a>
+        </div>
+        <div class="contact-line">
+          <span>ВКонтакте</span>
+          <a href="https://vk.ru/medsiren" target="_blank" rel="noopener">vk.ru/medsiren</a>
+        </div>
+        <div class="contact-line">
+          <span>MAX</span>
+          <a href="https://max.ru/medsiren" target="_blank" rel="noopener">max.ru/medsiren</a>
+        </div>
+        <a class="btn" href="https://vk.ru/medsiren" target="_blank" rel="noopener">
+          Написать в VK
+        </a>
+      </div>
+      <div class="contact-card">
+        <h3>Перед посещением</h3>
+        <p>
+          Уточните наличие свободного времени, стоимость выбранной
+          процедуры и необходимость предварительной консультации.
+        </p>
+        <p>
+          Специалист поможет разобраться в показаниях и ограничениях
+          для выбранной процедуры.
+        </p>
+        <a class="btn btn-outline" href="tel:+79213939696">Позвонить в студию</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Med<span class="flower">✿</span>siren</div>
+    <div>Студия физиотерапии · Сукко</div>
+    <p>Красота и здоровье — в гармонии с природой ♡</p>
+    <p>© Med Siren</p>
+  </div>
+</footer>
+</body>
+</html>
